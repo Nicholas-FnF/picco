@@ -1,5 +1,6 @@
 import { Ping, Pong } from '../commands/fun';
-import { Dns } from '../commands/info';
 import { Command } from '../types/command';
+import { Json } from '../commands/utils';
+import { Dns } from '../commands/info';
 
-export const Commands: Command[] = [Ping, Pong, Dns];
+export const Commands: Command[] = [Ping, Pong, Dns, Json];
