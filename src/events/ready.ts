@@ -1,5 +1,5 @@
 import { Commands } from '../helpers/commands';
-import { Client } from 'discord.js';
+import { ActivityType, Client, Presence } from 'discord.js';
 import chalk from 'chalk';
 
 export const ready = (client: Client): void => {
@@ -7,6 +7,12 @@ export const ready = (client: Client): void => {
         if (!client.user || !client.application) {
             return;
         }
+
+        client.user.setActivity('over the tree house.', {
+            type: ActivityType.Watching,
+        });
+
+        client.user.setStatus('dnd');
 
         try {
             await client.application.commands.set(Commands);
