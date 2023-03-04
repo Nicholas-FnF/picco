@@ -1,4 +1,3 @@
-import { getNumber } from './../../helpers/get-number';
 import {
     Client,
     CommandInteraction,
@@ -32,7 +31,7 @@ export const Json: Command = {
         const { value } = interaction.options.get('hostname');
         const { value: secure } = interaction.options.get('secure');
 
-        if (getNumber(value as string)) {
+        if (isNaN(Number(value))) {
             return await interaction.followUp({
                 ephemeral: false,
                 content: 'Input must be a string.',
